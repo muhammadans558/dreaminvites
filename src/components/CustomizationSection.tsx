@@ -90,7 +90,7 @@ export const CustomizationSection: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative aspect-4/3 sm:aspect-1/1 rounded-xs overflow-hidden bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xl">
               <img
-                src="/src/assets/images/card_floral_romance_1790662796207.jpg"
+                src="/assets/images/card_floral_romance_1790662796207.jpg"
                 alt="Close-up luxury wedding card with botanical watercolor and wax seal by Dream Invites"
                 referrerPolicy="no-referrer"
                 loading="lazy"

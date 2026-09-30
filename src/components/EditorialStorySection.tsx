@@ -61,7 +61,7 @@ export const EditorialStorySection: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-4/3 sm:aspect-1/1 max-w-lg mx-auto rounded-xs overflow-hidden bg-stone-100 dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800/90 shadow-xl">
               <img
-                src="/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg"
+                src="/assets/images/stationery_detail_wax_seal_1790663743925.jpg"
                 alt="Close-up detail of wedding invitation envelope, gold calligraphy, and wax seal by Dream Invites"
                 referrerPolicy="no-referrer"
                 loading="lazy"

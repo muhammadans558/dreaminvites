@@ -12,7 +12,7 @@ export const FullWidthBreak: React.FC = () => {
     >
       {/* Background Editorial Image with subtle 800ms reveal transition */}
       <img
-        src="/src/assets/images/fullwidth_stationery_atelier_1790666883253.jpg"
+        src="/assets/images/fullwidth_stationery_atelier_1790666883253.jpg"
         alt="Wedding stationery flat lay by Dream Invites"
         referrerPolicy="no-referrer"
         loading="lazy"

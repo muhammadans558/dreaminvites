@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
         }}
       >
         <img
-          src="/src/assets/images/hero_wedding_stationery_1790662746929.jpg"
+          src="/assets/images/hero_wedding_stationery_1790662746929.jpg"
           alt="Editorial luxury wedding invitation stationery suite with gold foil calligraphy and wax seal by Dream Invites"
           referrerPolicy="no-referrer"
           onLoad={() => setImageLoaded(true)}

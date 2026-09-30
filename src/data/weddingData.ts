@@ -105,7 +105,7 @@ export const COLLECTIONS: CollectionInfo[] = [
     slug: 'bid-boxes',
     name: 'Bid Boxes',
     shortDescription: 'Beautiful bid boxes made to add a thoughtful touch to your celebration.',
-    coverImage: '/src/assets/images/bidbox_royal_emerald_1790663691007.jpg',
+    coverImage: '/assets/images/bidbox_royal_emerald_1790663691007.jpg',
     altText: 'Ceremonial favor bid boxes collection by Dream Invites',
     ctaText: 'EXPLORE BID BOXES',
     productCountDescription: '4 Ceremonial Keepsakes',
@@ -115,7 +115,7 @@ export const COLLECTIONS: CollectionInfo[] = [
     slug: 'nikah-frames',
     name: 'Nikah Frames',
     shortDescription: 'Elegant Nikah frames created to preserve a meaningful moment.',
-    coverImage: '/src/assets/images/nikah_frame_collection_1790675009112.jpg',
+    coverImage: '/assets/images/nikah_frame_collection_1790675009112.jpg',
     altText: 'Bespoke Nikah frames collection by Dream Invites',
     ctaText: 'EXPLORE NIKAH FRAMES',
     productCountDescription: '3 Keepsake Frames',
@@ -507,10 +507,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'A regal ceremonial favor box bound in emerald velvet with gold Arabesque filigree',
     description: 'A beautifully presented ceremonial bid box designed for your special announcement and luxury sweet favors. Hand-wrapped in emerald velvet with intricate gold foil arches and a handmade silk tassel.',
     images: [
-      '/src/assets/images/bidbox_royal_emerald_1790663691007.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
-      '/src/assets/images/bidbox_ivory_gold_1790663711646.jpg',
-      '/src/assets/images/card_traditional_grace_1790662808370.jpg',
+      '/assets/images/bidbox_royal_emerald_1790663691007.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/bidbox_ivory_gold_1790663711646.jpg',
+      '/assets/images/card_traditional_grace_1790662808370.jpg',
     ],
     details: {
       style: 'Royal Subcontinental Velvet',
@@ -532,10 +532,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'Understated bridal keepsake box in textured linen cardstock and gold medallion',
     description: 'An exquisitely tailored announcement box in heavy textured ivory linen cardstock, stamped with warm gold lettering, featuring an artisanal wax seal medallion and satin ribbon tie.',
     images: [
-      '/src/assets/images/bidbox_ivory_gold_1790663711646.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
-      '/src/assets/images/bidbox_blush_floral_1790663729292.jpg',
-      '/src/assets/images/featured_invitation_editorial_1790662767611.jpg',
+      '/assets/images/bidbox_ivory_gold_1790663711646.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/bidbox_blush_floral_1790663729292.jpg',
+      '/assets/images/featured_invitation_editorial_1790662767611.jpg',
     ],
     details: {
       style: 'Contemporary Bridal Linen',
@@ -557,9 +557,9 @@ export const PRODUCTS: Product[] = [
     tagline: 'Romantic sweet favor box kissed with delicate watercolors and gold debossed rims',
     description: 'A charming wedding bid box adorned with delicate blush and ivory floral watercolor patterns, debossed gold accents, and personalized couple calligraphy for sweet wedding favors.',
     images: [
-      '/src/assets/images/bidbox_blush_floral_1790663729292.jpg',
-      '/src/assets/images/card_floral_romance_1790662796207.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/bidbox_blush_floral_1790663729292.jpg',
+      '/assets/images/card_floral_romance_1790662796207.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
     ],
     details: {
       style: 'Romantic Botanical Watercolor',
@@ -581,10 +581,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'A grand multi-compartment ceremonial announcement box for timeless celebrations',
     description: 'Designed for families who appreciate subcontinental grandeur. Features multi-compartment interior for celebratory sweets, dry fruits, and a dedicated presentation slot for the wedding card.',
     images: [
-      '/src/assets/images/bidbox_royal_emerald_1790663691007.jpg',
-      '/src/assets/images/bidbox_ivory_gold_1790663711646.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
-      '/src/assets/images/hero_wedding_stationery_1790662746929.jpg',
+      '/assets/images/bidbox_royal_emerald_1790663691007.jpg',
+      '/assets/images/bidbox_ivory_gold_1790663711646.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/hero_wedding_stationery_1790662746929.jpg',
     ],
     details: {
       style: 'Grand Ceremonial Multi-Compartment',
@@ -608,10 +608,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'Floating glass and gold leaf frame created for your Nikah certificate',
     description: 'A ceremonial keepsake frame crafted in handcrafted gold leaf moulding and floating double glass, designed to preserve your sacred Nikah certificate with timeless grace.',
     images: [
-      '/src/assets/images/nikah_frame_collection_1790675009112.jpg',
-      '/src/assets/images/nikah_frame_archival_1790675052381.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
-      '/src/assets/images/hero_wedding_stationery_1790662746929.jpg',
+      '/assets/images/nikah_frame_collection_1790675009112.jpg',
+      '/assets/images/nikah_frame_archival_1790675052381.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/hero_wedding_stationery_1790662746929.jpg',
     ],
     details: {
       style: 'Floating Double Glass',
@@ -632,10 +632,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'Minimal brushed champagne floating frame with botanical accents',
     description: 'A modern floating glass frame with a delicate champagne border and pressed botanical accents, framing your certificate in radiant daylight clarity.',
     images: [
-      '/src/assets/images/nikah_frame_floating_1790675032438.jpg',
-      '/src/assets/images/nikah_frame_collection_1790675009112.jpg',
-      '/src/assets/images/card_minimal_elegance_1790662782511.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/nikah_frame_floating_1790675032438.jpg',
+      '/assets/images/nikah_frame_collection_1790675009112.jpg',
+      '/assets/images/card_minimal_elegance_1790662782511.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
     ],
     details: {
       style: 'Contemporary Minimalist Floating',
@@ -656,10 +656,10 @@ export const PRODUCTS: Product[] = [
     tagline: 'Solid wood frame with Islamic arched calligraphy mounting',
     description: 'Traditional carved natural solid wood frame with warm gold inner fillet, honoring Islamic architectural arches and artisanal calligraphy traditions.',
     images: [
-      '/src/assets/images/nikah_frame_archival_1790675052381.jpg',
-      '/src/assets/images/nikah_frame_floating_1790675032438.jpg',
-      '/src/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
-      '/src/assets/images/hero_wedding_stationery_1790662746929.jpg',
+      '/assets/images/nikah_frame_archival_1790675052381.jpg',
+      '/assets/images/nikah_frame_floating_1790675032438.jpg',
+      '/assets/images/stationery_detail_wax_seal_1790663743925.jpg',
+      '/assets/images/hero_wedding_stationery_1790662746929.jpg',
     ],
     details: {
       style: 'Subcontinental Heritage Carved',
@@ -684,7 +684,7 @@ export const CUSTOMER_REVIEWS: CustomerReview[] = [
     id: 'rev-2',
     name: 'Hamza',
     review: "I ordered these for my brother's wedding and everyone in the family liked the design. The final print was clean and the details were exactly as expected.",
-    context: "Brother's Wedding",
+    context: "Brother's Wedding Cards",
   },
   {
     id: 'rev-3',
@@ -696,7 +696,7 @@ export const CUSTOMER_REVIEWS: CustomerReview[] = [
     id: 'rev-4',
     name: 'Usman',
     review: "I ordered cards for my sister's Nikah. The design was simple and elegant, which was exactly what we wanted.",
-    context: "Sister's Nikah",
+    context: "Sister's Nikah Cards",
   },
   {
     id: 'rev-5',
@@ -720,7 +720,49 @@ export const CUSTOMER_REVIEWS: CustomerReview[] = [
     id: 'rev-8',
     name: 'Omar',
     review: "Ordered the emerald bid boxes for my brother's wedding. Good communication on WhatsApp and the packing was secure.",
-    context: 'Favor Boxes',
+    context: 'Ceremonial Favor Boxes',
+  },
+  {
+    id: 'rev-9',
+    name: 'Hassan',
+    review: 'The laser cutwork on our wedding invites was so precise. Delivery reached Karachi two days before our scheduled distribution.',
+    context: 'Wedding Cards',
+  },
+  {
+    id: 'rev-10',
+    name: 'Hira',
+    review: "Ordered custom cards for my sister's Walima. The color matching with her dress theme and the gold accents were spot on.",
+    context: 'Walima Cards',
+  },
+  {
+    id: 'rev-11',
+    name: 'Saad',
+    review: 'The paper thickness and foil embossing gave the invitations a very royal feel. Everyone in the family asked where we got them made.',
+    context: 'Wedding Invitation Cards',
+  },
+  {
+    id: 'rev-12',
+    name: 'Khadija',
+    review: 'We needed cards on short notice for our family wedding. The team coordinated everything smoothly on WhatsApp and dispatched promptly.',
+    context: 'Nikah Invitations',
+  },
+  {
+    id: 'rev-13',
+    name: 'Tariq',
+    review: 'The velvet bid boxes with silk tassels made such a good impression on our guests. Beautifully finished and securely packed.',
+    context: 'Favor Bid Boxes',
+  },
+  {
+    id: 'rev-14',
+    name: 'Anum',
+    review: 'Received our wedding cards yesterday. The gold calligraphy and scalloped envelopes are truly stunning in real life.',
+    context: 'Wedding Cards',
+  },
+  {
+    id: 'rev-15',
+    name: 'Zubair',
+    review: "Ordered for my brother's Barat. Clean typography, premium cardstock, and hassle-free communication from start to finish.",
+    context: 'Baraat Invitation Suite',
   },
 ];
 
@@ -761,7 +803,7 @@ export const EVENT_TYPES: EventType[] = [
     vibe: 'Serene, Sacred & Elegant',
     palette: ['#FAF8F5', '#EAD9C4', '#2D4A3E', '#0A0A0A'],
     accentNotes: 'Quranic verses, refined English calligraphy, gold foil deboss',
-    image: '/src/assets/images/card_minimal_elegance_1790662782511.jpg',
+    image: '/assets/images/card_minimal_elegance_1790662782511.jpg',
   },
   {
     id: 'mehndi',
@@ -771,7 +813,7 @@ export const EVENT_TYPES: EventType[] = [
     vibe: 'Festive, Joyous & Warm',
     palette: ['#E6A15C', '#C25D42', '#3D614A', '#FAF5E8'],
     accentNotes: 'Henna filigree, playful typography, celebratory card inserts',
-    image: '/src/assets/images/card_floral_romance_1790662796207.jpg',
+    image: '/assets/images/card_floral_romance_1790662796207.jpg',
   },
   {
     id: 'baraat',
@@ -781,7 +823,7 @@ export const EVENT_TYPES: EventType[] = [
     vibe: 'Regal, Prestigious & Ceremonial',
     palette: ['#1C3F34', '#992B2B', '#D4AF37', '#FAF8F5'],
     accentNotes: 'Hardbound folio, gold tassel, bilingual invitation card',
-    image: '/src/assets/images/card_traditional_grace_1790662808370.jpg',
+    image: '/assets/images/card_traditional_grace_1790662808370.jpg',
   },
   {
     id: 'walima',
@@ -791,7 +833,7 @@ export const EVENT_TYPES: EventType[] = [
     vibe: 'Sophisticated, Warm & Romantic',
     palette: ['#E8DED1', '#4A5568', '#00AEEF', '#FFFFFF'],
     accentNotes: 'Pearlized paper stock, vellum overlay, reception dinner details',
-    image: '/src/assets/images/featured_invitation_editorial_1790662767611.jpg',
+    image: '/assets/images/featured_invitation_editorial_1790662767611.jpg',
   },
   {
     id: 'engagement',
@@ -801,7 +843,7 @@ export const EVENT_TYPES: EventType[] = [
     vibe: 'Intimate, Modern & Sweet',
     palette: ['#F3E9DF', '#B89B72', '#2A2928', '#FFFFFF'],
     accentNotes: 'Bespoke couple initials, botanical accent, wax seal',
-    image: '/src/assets/images/card_floral_romance_1790662796207.jpg',
+    image: '/assets/images/card_floral_romance_1790662796207.jpg',
   },
   {
     id: 'dholki',
@@ -811,7 +853,7 @@ export const EVENT_TYPES: EventType[] = [
     vibe: 'Warm, Cultural & Lively',
     palette: ['#D97706', '#059669', '#7C3AED', '#FAF8F5'],
     accentNotes: 'Musical motifs, warm tones, compact format',
-    image: '/src/assets/images/hero_wedding_stationery_1790662746929.jpg',
+    image: '/assets/images/hero_wedding_stationery_1790662746929.jpg',
   },
 ];
 
@@ -842,37 +884,37 @@ export const INSTAGRAM_GALLERY_ITEMS = [
   {
     id: 'ig-1',
     caption: 'Gold foil typography on deckled Italian cotton with sage envelope.',
-    image: '/src/assets/images/featured_invitation_editorial_1790662767611.jpg',
+    image: '/assets/images/featured_invitation_editorial_1790662767611.jpg',
     likes: 'Bespoke Suite',
   },
   {
     id: 'ig-2',
     caption: 'Clean architectural stationery suite for an intimate Lahore Nikah.',
-    image: '/src/assets/images/card_minimal_elegance_1790662782511.jpg',
+    image: '/assets/images/card_minimal_elegance_1790662782511.jpg',
     likes: 'Nikah Collection',
   },
   {
     id: 'ig-3',
     caption: 'Handcrafted floral watercolors kissed with warm foil accents.',
-    image: '/src/assets/images/card_floral_romance_1790662796207.jpg',
+    image: '/assets/images/card_floral_romance_1790662796207.jpg',
     likes: 'Floral Series',
   },
   {
     id: 'ig-4',
     caption: 'Traditional royal green and gold Arabesque suite with custom silk tassel.',
-    image: '/src/assets/images/card_traditional_grace_1790662808370.jpg',
+    image: '/assets/images/card_traditional_grace_1790662808370.jpg',
     likes: 'Heritage Series',
   },
   {
     id: 'ig-5',
     caption: 'Complete ceremonial multi-card suite with RSVP and presentation box.',
-    image: '/src/assets/images/hero_wedding_stationery_1790662746929.jpg',
+    image: '/assets/images/hero_wedding_stationery_1790662746929.jpg',
     likes: 'Luxury Boxed',
   },
   {
     id: 'ig-6',
     caption: 'Minimal vellum jacket tied with delicate champagne raw silk thread.',
-    image: '/src/assets/images/card_minimal_elegance_1790662782511.jpg',
+    image: '/assets/images/card_minimal_elegance_1790662782511.jpg',
     likes: 'Studio Details',
   },
 ];

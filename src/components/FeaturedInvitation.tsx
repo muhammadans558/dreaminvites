@@ -14,7 +14,7 @@ export const FeaturedInvitation: React.FC = () => {
           <div className="lg:col-span-7 relative">
             <div className="relative aspect-4/3 rounded-xs overflow-hidden bg-stone-200 dark:bg-stone-800 border border-stone-300/80 dark:border-stone-700/80 shadow-xl">
               <img
-                src="/src/assets/images/featured_invitation_editorial_1790662767611.jpg"
+                src="/assets/images/featured_invitation_editorial_1790662767611.jpg"
                 alt="Editorial luxury wedding card flat lay with bespoke monogram wax seal and gold foil lettering by Dream Invites"
                 referrerPolicy="no-referrer"
                 loading="lazy"

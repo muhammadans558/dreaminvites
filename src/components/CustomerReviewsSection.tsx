@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { CUSTOMER_REVIEWS, CustomerReview } from '../data/weddingData';
+import { CUSTOMER_REVIEWS } from '../data/weddingData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const CustomerReviewsSection: React.FC = () => {
@@ -11,24 +11,54 @@ export const CustomerReviewsSection: React.FC = () => {
   const touchStartXRef = useRef<number | null>(null);
   const touchEndXRef = useRef<number | null>(null);
 
-  // Number of reviews to slide through
+  // Responsive items visible count: 1 on mobile, 2 on tablet, 3 on desktop
+  const [itemsPerPage, setItemsPerPage] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+    }
+    return 1;
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsPerPage(3);
+      } else if (window.innerWidth >= 768) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(1);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const totalReviews = CUSTOMER_REVIEWS.length;
+  const maxIndex = Math.max(0, totalReviews - itemsPerPage);
+
+  // Keep currentIndex within valid bounds when resizing
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
+    }
+  }, [itemsPerPage, maxIndex, currentIndex]);
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % totalReviews);
-  }, [totalReviews]);
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  }, [maxIndex]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + totalReviews) % totalReviews);
-  }, [totalReviews]);
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  }, [maxIndex]);
 
-  // Autoplay: slide every 6 seconds, pausing on hover/interaction
+  // Autoplay: continuously move at a comfortable, smooth 4.5s pace
   useEffect(() => {
     if (isPaused) return;
 
     autoPlayTimerRef.current = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 4500);
 
     return () => {
       if (autoPlayTimerRef.current) {
@@ -50,16 +80,16 @@ export const CustomerReviewsSection: React.FC = () => {
   const handleTouchEnd = () => {
     if (touchStartXRef.current !== null && touchEndXRef.current !== null) {
       const diff = touchStartXRef.current - touchEndXRef.current;
-      if (diff > 45) {
+      if (diff > 40) {
         nextSlide();
-      } else if (diff < -45) {
+      } else if (diff < -40) {
         prevSlide();
       }
     }
     touchStartXRef.current = null;
     touchEndXRef.current = null;
-    // Resume autoplay after 3s
-    setTimeout(() => setIsPaused(false), 3000);
+    // Smoothly resume autoplay after 2.5s
+    setTimeout(() => setIsPaused(false), 2500);
   };
 
   return (
@@ -73,7 +103,7 @@ export const CustomerReviewsSection: React.FC = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-stone-300/60 dark:border-stone-800">
@@ -89,13 +119,13 @@ export const CustomerReviewsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Desktop Arrow Controls */}
+          {/* Desktop & Mobile Arrow Controls */}
           <div className="flex items-center gap-2 self-start sm:self-auto">
             <button
               type="button"
               onClick={prevSlide}
               aria-label="Previous review"
-              className="w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 bg-white/80 dark:bg-stone-800/80 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 flex items-center justify-center transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF]"
+              className="w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 bg-white/80 dark:bg-stone-800/80 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 flex items-center justify-center transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF] cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -103,7 +133,7 @@ export const CustomerReviewsSection: React.FC = () => {
               type="button"
               onClick={nextSlide}
               aria-label="Next review"
-              className="w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 bg-white/80 dark:bg-stone-800/80 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 flex items-center justify-center transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF]"
+              className="w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 bg-white/80 dark:bg-stone-800/80 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 flex items-center justify-center transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF] cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -118,45 +148,41 @@ export const CustomerReviewsSection: React.FC = () => {
           onTouchEnd={handleTouchEnd}
         >
           {/* Subtle decorative quotation mark */}
-          <div className="absolute -top-4 -left-2 text-stone-300/40 dark:text-stone-700/30 pointer-events-none select-none">
-            <Quote className="w-24 h-24 stroke-[1]" />
+          <div className="absolute -top-4 -left-2 text-stone-300/35 dark:text-stone-700/25 pointer-events-none select-none">
+            <Quote className="w-20 h-20 stroke-[1]" />
           </div>
 
           {/* Reviews Slider Track */}
           <div
-            className="flex transition-transform duration-700 ease-out"
+            className="flex transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
+              transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
             }}
           >
-            {CUSTOMER_REVIEWS.map((item, idx) => (
+            {CUSTOMER_REVIEWS.map((item) => (
               <div
                 key={item.id}
-                className="w-full shrink-0 px-2 sm:px-4"
+                className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-2 sm:px-3 flex flex-col"
               >
-                <div className="bg-white/80 dark:bg-[#1C1A18] backdrop-blur-xs p-8 sm:p-12 rounded-xs border border-stone-200/80 dark:border-stone-800 shadow-2xs max-w-3xl mx-auto space-y-6 text-left relative">
+                <div className="h-full bg-white/85 dark:bg-[#1C1A18] backdrop-blur-xs p-6 sm:p-8 rounded-xs border border-stone-200/80 dark:border-stone-800 shadow-2xs space-y-4 text-left flex flex-col justify-between relative hover:border-stone-300 dark:hover:border-stone-700 transition-colors">
                   
-                  {/* Review Text in dark charcoal */}
-                  <p className="font-serif text-xl sm:text-2xl md:text-3xl text-stone-900 dark:text-stone-100 font-normal leading-relaxed italic">
+                  {/* Review Text */}
+                  <p className="font-serif text-lg sm:text-xl text-stone-900 dark:text-stone-100 font-normal leading-relaxed italic grow">
                     &ldquo;{item.review}&rdquo;
                   </p>
 
-                  {/* Customer Information (Individual Islamic names only, no avatars, no stars) */}
-                  <div className="pt-4 border-t border-stone-200/60 dark:border-stone-800/80 flex items-center justify-between">
+                  {/* Customer Information (Individual Islamic names, context, no fake labels or stars) */}
+                  <div className="pt-3 border-t border-stone-200/60 dark:border-stone-800/80 flex items-center justify-between">
                     <div>
-                      <h4 className="font-sans text-sm sm:text-base font-semibold text-stone-900 dark:text-stone-100">
+                      <h4 className="font-sans text-sm font-semibold text-stone-900 dark:text-stone-100">
                         {item.name}
                       </h4>
                       {item.context && (
-                        <span className="text-xs text-stone-500 dark:text-stone-400 font-normal font-sans">
+                        <span className="text-[11px] text-stone-500 dark:text-stone-400 font-normal font-sans block">
                           {item.context}
                         </span>
                       )}
                     </div>
-
-                    <span className="text-[11px] font-sans text-[#00AEEF] uppercase tracking-wider font-semibold">
-                      Verified Client
-                    </span>
                   </div>
 
                 </div>
@@ -166,16 +192,16 @@ export const CustomerReviewsSection: React.FC = () => {
         </div>
 
         {/* Carousel Dots Indicator */}
-        <div className="flex items-center justify-center gap-2 pt-2">
-          {CUSTOMER_REVIEWS.map((_, dotIdx) => (
+        <div className="flex items-center justify-center gap-1.5 pt-2">
+          {Array.from({ length: maxIndex + 1 }).map((_, dotIdx) => (
             <button
               key={dotIdx}
               type="button"
               onClick={() => setCurrentIndex(dotIdx)}
-              aria-label={`Go to review ${dotIdx + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              aria-label={`Go to review slide ${dotIdx + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                 dotIdx === currentIndex
-                  ? 'w-8 bg-[#00AEEF]'
+                  ? 'w-7 bg-[#00AEEF]'
                   : 'w-2 bg-stone-300 dark:bg-stone-700 hover:bg-stone-400'
               }`}
             />

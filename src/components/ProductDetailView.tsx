@@ -167,6 +167,9 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                   src={product.images[activeImageIndex] || product.images[0]}
                   alt={`${product.name} View ${activeImageIndex + 1} of ${product.images.length}`}
                   referrerPolicy="no-referrer"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   onLoad={() => setImageLoaded(true)}
                   onError={() => setImageError(true)}
                   className={`w-full h-full object-cover sm:object-contain transition-opacity duration-300 ${

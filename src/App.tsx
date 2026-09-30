@@ -17,14 +17,13 @@ import {
 } from './data/weddingData';
 
 export default function App() {
-  // Global Theme state with persistent storage and system fallback
+  // Global Theme state: MUST ALWAYS start in LIGHT MODE when landing on website
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('dream-invites-theme') || localStorage.getItem('dream_invites_theme');
-      if (saved === 'light' || saved === 'dark') {
-        return saved;
+      const session = sessionStorage.getItem('dream-invites-theme');
+      if (session === 'dark' || session === 'light') {
+        return session;
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     return 'light';
   });
@@ -41,8 +40,10 @@ export default function App() {
       root.classList.add('light');
       root.setAttribute('data-theme', 'light');
     }
-    localStorage.setItem('dream-invites-theme', newTheme);
-    localStorage.setItem('dream_invites_theme', newTheme);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('dream-invites-theme', newTheme);
+      localStorage.setItem('dream-invites-theme', newTheme);
+    }
   }, []);
 
   useEffect(() => {

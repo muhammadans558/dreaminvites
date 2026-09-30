@@ -16,11 +16,9 @@
     <script>
       (function() {
         try {
-          var saved = localStorage.getItem('dream-invites-theme') || localStorage.getItem('dream_invites_theme');
-          var theme = saved;
-          if (!theme || (theme !== 'light' && theme !== 'dark')) {
-            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
+          // Default theme must always start in LIGHT MODE on initial load
+          var sessionTheme = sessionStorage.getItem('dream-invites-theme');
+          var theme = sessionTheme === 'dark' ? 'dark' : 'light';
           if (theme === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
