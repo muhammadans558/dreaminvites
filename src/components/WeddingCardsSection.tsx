@@ -1,8 +1,9 @@
-import React from 'react';
-import { Eye } from 'lucide-react';
+import React, { useState } from 'react';
+import { Eye, ZoomIn } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product, PRODUCTS, BRAND_CONFIG } from '../data/weddingData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { ImageLightbox } from './ImageLightbox';
 
 interface WeddingCardsSectionProps {
   onSelectProduct: (product: Product) => void;
@@ -11,6 +12,7 @@ interface WeddingCardsSectionProps {
 export const WeddingCardsSection: React.FC<WeddingCardsSectionProps> = ({ onSelectProduct }) => {
   const { ref, isVisible } = useScrollReveal<HTMLElement>(0.1);
   const weddingCards = PRODUCTS.filter((p) => p.category === 'Wedding Cards');
+  const [lightboxProduct, setLightboxProduct] = useState<Product | null>(null);
 
   return (
     <section
@@ -65,7 +67,10 @@ export const WeddingCardsSection: React.FC<WeddingCardsSectionProps> = ({ onSele
                 {/* Product Image Frame */}
                 <div
                   className={`relative ${aspectClass} overflow-hidden bg-stone-100 dark:bg-stone-900 cursor-pointer`}
-                  onClick={() => onSelectProduct(card)}
+                  onClick={() => setLightboxProduct(card)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Open fullscreen zoom view for ${card.name}`}
                 >
                   <img
                     src={card.images[0]}
@@ -90,32 +95,25 @@ export const WeddingCardsSection: React.FC<WeddingCardsSectionProps> = ({ onSele
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-stone-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center p-4">
                     <span className="bg-stone-900/90 dark:bg-stone-100/90 text-white dark:text-stone-900 text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xs shadow-md flex items-center gap-2">
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>View Details</span>
+                      <ZoomIn className="w-3.5 h-3.5" />
+                      <span>Zoom Image</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Metadata Block */}
-                <div className="p-5 sm:p-6 space-y-3 grow flex flex-col justify-between">
-                  <div className="space-y-1.5">
+                <div className="p-4 sm:p-5 space-y-3 grow flex flex-col justify-between">
+                  <div className="space-y-1">
                     <div className="text-[11px] uppercase tracking-widest text-[#00AEEF] font-semibold">
                       Wedding Invitation
                     </div>
                     <h3
                       onClick={() => onSelectProduct(card)}
-                      className="font-serif text-2xl font-normal text-stone-900 dark:text-stone-50 group-hover:text-[#00AEEF] dark:group-hover:text-[#00AEEF] group-hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                      className="font-serif text-xl sm:text-2xl font-normal text-stone-900 dark:text-stone-50 group-hover:text-[#00AEEF] dark:group-hover:text-[#00AEEF] transition-colors cursor-pointer"
                     >
                       {card.name}
                     </h3>
-                    <p className="text-xs text-stone-500 dark:text-stone-400 font-light italic line-clamp-1">
-                      {card.tagline}
-                    </p>
                   </div>
-
-                  <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-normal leading-relaxed line-clamp-2">
-                    {card.description}
-                  </p>
 
                   {/* Dual Action Buttons */}
                   <div className="pt-3 border-t border-stone-100 dark:border-stone-800/80 grid grid-cols-2 gap-2">
@@ -162,6 +160,14 @@ export const WeddingCardsSection: React.FC<WeddingCardsSectionProps> = ({ onSele
         </div>
 
       </div>
+
+      {/* FULLSCREEN IMAGE VIEWER / LIGHTBOX */}
+      <ImageLightbox
+        product={lightboxProduct}
+        initialIndex={0}
+        isOpen={Boolean(lightboxProduct)}
+        onClose={() => setLightboxProduct(null)}
+      />
     </section>
   );
 };

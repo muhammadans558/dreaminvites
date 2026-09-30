@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { X, ChevronLeft, ChevronRight, Check, ArrowRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Check, ArrowRight, ZoomIn } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product, BRAND_CONFIG, getRelatedProducts } from '../data/weddingData';
+import { ImageLightbox } from './ImageLightbox';
 
 interface ProductDetailViewProps {
   product: Product;
@@ -17,6 +18,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   // Touch swipe support for mobile
   const touchStartXRef = useRef<number | null>(null);
@@ -143,12 +145,22 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
              ======================================================== */}
           <div className="lg:col-span-7 space-y-4">
             
-            {/* Main Image Frame with Touch Swipe */}
+            {/* Main Image Frame with Touch Swipe & Fullscreen Lightbox */}
             <div
-              className="relative aspect-4/3 sm:aspect-16/11 bg-stone-100 dark:bg-stone-900 rounded-xs overflow-hidden border border-stone-200/90 dark:border-stone-800/90 shadow-md select-none"
+              className="relative aspect-4/3 sm:aspect-16/11 bg-stone-100 dark:bg-stone-900 rounded-xs overflow-hidden border border-stone-200/90 dark:border-stone-800/90 shadow-md select-none cursor-zoom-in group/mainimg"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
+              onClick={() => setIsLightboxOpen(true)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setIsLightboxOpen(true);
+                }
+              }}
+              aria-label={`Click to zoom image ${activeImageIndex + 1} for ${product.name}`}
             >
               {!imageError ? (
                 <img
@@ -173,23 +185,43 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                 <>
                   <button
                     type="button"
-                    onClick={handlePrevImage}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePrevImage();
+                    }}
                     aria-label="Previous product image"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-stone-900/90 hover:bg-white dark:hover:bg-stone-900 text-stone-800 dark:text-stone-100 shadow-md flex items-center justify-center transition-all opacity-85 hover:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF]"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-stone-900/90 hover:bg-white dark:hover:bg-stone-900 text-stone-800 dark:text-stone-100 shadow-md flex items-center justify-center transition-all opacity-85 hover:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF] cursor-pointer"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
 
                   <button
                     type="button"
-                    onClick={handleNextImage}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNextImage();
+                    }}
                     aria-label="Next product image"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-stone-900/90 hover:bg-white dark:hover:bg-stone-900 text-stone-800 dark:text-stone-100 shadow-md flex items-center justify-center transition-all opacity-85 hover:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-stone-900/90 hover:bg-white dark:hover:bg-stone-900 text-stone-800 dark:text-stone-100 shadow-md flex items-center justify-center transition-all opacity-85 hover:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00AEEF] cursor-pointer"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
                 </>
               )}
+
+              {/* Zoom In Badge Top Right */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsLightboxOpen(true);
+                }}
+                aria-label="Open fullscreen image viewer"
+                className="absolute top-3 right-3 bg-stone-900/80 hover:bg-stone-900 text-white backdrop-blur-xs text-[11px] font-medium px-2.5 py-1.5 rounded-xs flex items-center gap-1.5 shadow-sm transition-transform group-hover/mainimg:scale-105 cursor-pointer"
+              >
+                <ZoomIn className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline uppercase tracking-wider text-[10px]">Fullscreen</span>
+              </button>
 
               {/* Image Counter Badge */}
               {product.images.length > 1 && (
@@ -423,6 +455,14 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
         )}
 
       </main>
+
+      {/* FULLSCREEN IMAGE VIEWER / LIGHTBOX */}
+      <ImageLightbox
+        product={product}
+        initialIndex={activeImageIndex}
+        isOpen={isLightboxOpen}
+        onClose={() => setIsLightboxOpen(false)}
+      />
 
     </div>
   );
