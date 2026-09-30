@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* 
+ * TAILWIND CSS V4 CLASS-BASED DARK VARIANT
+ * Overrides the default prefers-color-scheme media query to allow explicit
+ * class-based (.dark) and attribute-based ([data-theme="dark"]) theme switching.
+ */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* LIGHT THEME DESIGN TOKENS (Warm Ivory Wedding Stationery Aesthetic) */
+    --background: #FAF8F5;          /* Warm Ivory */
+    --foreground: #1C1917;          /* Deep Charcoal Text */
+    --surface: #FFFFFF;             /* Pure Card Canvas */
+    --surface-secondary: #F5F1EB;   /* Soft Champagne Cream */
+    --card-background: #FFFFFF;
+    --border: #E7E2DA;              /* Hairline warm stone border */
+    --border-subtle: #EFECE6;
+    --muted-text: #78716C;
+    --heading: #0C0A09;
+    --accent: #00AEEF;              /* Dream Invites Turquoise */
+    --accent-hover: #009FD9;
+    --button-background: #1C1917;
+    --button-text: #FFFFFF;
+    --overlay: rgba(12, 10, 9, 0.65);
+  }
+
+  :root[data-theme='dark'],
+  .dark {
+    /* DARK THEME DESIGN TOKENS (Midnight Slate & Gold Atelier Aesthetic) */
+    --background: #121110;          /* Deep Charcoal Near-Black */
+    --foreground: #F5F5F4;          /* Warm Ivory Typography */
+    --surface: #181716;             /* Velvet Charcoal Card */
+    --surface-secondary: #1E1D1B;   /* Secondary Dark Surface */
+    --card-background: #181716;
+    --border: #292724;              /* Subtle dark hairline border */
+    --border-subtle: #232220;
+    --muted-text: #A8A29E;
+    --heading: #FAF8F5;
+    --accent: #00AEEF;              /* Dream Invites Turquoise */
+    --accent-hover: #38BDF8;
+    --button-background: #FAF8F5;
+    --button-text: #121110;
+    --overlay: rgba(0, 0, 0, 0.80);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+  }
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-heroReveal {
+  animation: revealUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-heroSubReveal {
+  animation: revealUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
+}
+
+.animate-heroBtnReveal {
+  animation: revealUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 300ms forwards;
+}
+
+
+/* 
+ * PROFESSIONAL THEME TRANSITION (250ms - 350ms)
+ * Only transitions color, background-color, border-color, and box-shadow.
+ * Never touches layout dimensions (width, height, margin, padding) to prevent layout shifts.
+ */
+html,
+body,
+header,
+main,
+section,
+footer,
+nav,
+button,
+a,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+input,
+textarea,
+select {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+

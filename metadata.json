@@ -1,0 +1,6 @@
+{
+  "name": "Dream Invites",
+  "description": "Discover elegant wedding invitations and beautifully designed wedding cards by Dream Invites. Explore our collection and inquire on WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
