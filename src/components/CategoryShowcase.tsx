@@ -81,7 +81,7 @@ export const CategoryShowcase: React.FC = () => {
                   <span>Explore Wedding Cards</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">15 Designs</span>
+                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">17 Designs</span>
               </div>
             </div>
           </div>
@@ -93,8 +93,8 @@ export const CategoryShowcase: React.FC = () => {
           >
             <div className="relative aspect-4/3 sm:aspect-16/11 overflow-hidden bg-stone-100 dark:bg-stone-900">
               <img
-                src="/assets/images/bidbox_royal_emerald_1790663691007.jpg"
-                alt="Sweet favor bid boxes by Dream Invites"
+                src="/products/bid-boxes/rattan-bloom-bid-box/RB-01.png"
+                alt="Rattan Bloom ceremonial favor bid box by Dream Invites"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-102"
@@ -119,7 +119,7 @@ export const CategoryShowcase: React.FC = () => {
                   <span>Explore Bid Boxes</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">4 Keepsakes</span>
+                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">Bespoke Keepsakes</span>
               </div>
             </div>
           </div>
