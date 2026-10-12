@@ -93,7 +93,7 @@ export const CategoryShowcase: React.FC = () => {
           >
             <div className="relative aspect-4/3 sm:aspect-16/11 overflow-hidden bg-stone-100 dark:bg-stone-900">
               <img
-                src="/products/bid-boxes/rattan-bloom-bid-box/RB-01.png"
+                src="/bid-boxes/Rattan Bloom Bid Box 06/RB-01.png"
                 alt="Rattan Bloom ceremonial favor bid box by Dream Invites"
                 referrerPolicy="no-referrer"
                 loading="lazy"
@@ -119,7 +119,7 @@ export const CategoryShowcase: React.FC = () => {
                   <span>Explore Bid Boxes</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">Bespoke Keepsakes</span>
+                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">14 Keepsakes</span>
               </div>
             </div>
           </div>

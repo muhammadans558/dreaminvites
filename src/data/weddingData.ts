@@ -105,10 +105,10 @@ export const COLLECTIONS: CollectionInfo[] = [
     slug: 'bid-boxes',
     name: 'Bid Boxes',
     shortDescription: 'Beautiful bid boxes made to add a thoughtful touch to your celebration.',
-    coverImage: '/products/bid-boxes/rattan-bloom-bid-box/RB-01.png',
+    coverImage: '/bid-boxes/Rattan Bloom Bid Box 06/RB-01.png',
     altText: 'Rattan Bloom ceremonial favor bid box by Dream Invites',
     ctaText: 'EXPLORE BID BOXES',
-    productCountDescription: 'Bespoke Keepsakes',
+    productCountDescription: '14 Bespoke Keepsakes',
   },
   {
     id: 'nikah-frames',
@@ -259,9 +259,9 @@ export const PRODUCTS: Product[] = [
     tagline: 'Cream invitation and save the date cards with a rich floral border',
     description: 'Cream invitation and save the date cards feature a rich floral border in pink, coral and burgundy tones. Elegant script lettering appears across the cards. A matching cream envelope shows a gold monogram on the flap.',
     images: [
-      '/products/wedding-cards/coral-bloom-01/CB-01.png',
-      '/products/wedding-cards/coral-bloom-01/CB-02.png',
-      '/products/wedding-cards/coral-bloom-01/CB-03.png',
+      '/products/wedding-cards/Coral Bloom 01/CB-01.png',
+      '/products/wedding-cards/Coral Bloom 01/CB-02.png',
+      '/products/wedding-cards/Coral Bloom 01/CB-03.png',
     ],
     details: {
       style: 'Botanical Floral Border & Script Lettering',
@@ -543,107 +543,305 @@ export const PRODUCTS: Product[] = [
     altText: 'Ribbon Grace elegant wedding invitation suite by Dream Invites',
   },
 
-  // --- BID BOXES (Real Dream Invites Favor Boxes) ---
-  // Mint Toile Bid Box
+  // --- BID BOXES (14 Real Dream Invites Favor Boxes in Exact Specified Order) ---
+  // 1. Blue Toile Bid Box
+  {
+    id: 'blue-toile-bid-box',
+    slug: 'blue-toile-bid-box',
+    name: 'Blue Toile Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Floral',
+    tagline: 'Soft blue favor box with white toile botanical illustrations and pearl charm',
+    description: 'Soft blue favor box with white botanical and bird illustrations in a classic toile pattern. It is tied with a cream ribbon and finished with a delicate pearl charm.',
+    images: [
+      '/bid-boxes/Blue Toile Bid Box 1/BT-01.png',
+    ],
+    details: {
+      style: 'Classic Toile de Jouy Pattern',
+      customization: 'Available (Personalized Monogram, Ribbon Selection)',
+      finishing: 'Matte Art Cardstock with Toile Illustration & Pearl Charm',
+      occasion: 'Nikah Announcement, Bridal Favors, Luxury Sweets',
+    },
+    features: ['Classic Toile Botanical Pattern', 'Delicate Pearl Charm Accent', 'Cream Satin Ribbon Tie', 'Rigid Favor Construction'],
+    altText: 'Blue Toile bespoke favor bid box by Dream Invites',
+  },
+
+  // 2. Cream Toile Bid Box
+  {
+    id: 'cream-toile-bid-box',
+    slug: 'cream-toile-bid-box',
+    name: 'Cream Toile Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Floral',
+    tagline: 'Cream favor box with soft toile illustrations and pearl charm',
+    description: 'Cream favor box with soft botanical and bird illustrations in a classic toile pattern. It is tied with a cream ribbon and finished with a pearl charm.',
+    images: [
+      '/bid-boxes/Cream Toile Bid Box 02/CT-01.png',
+    ],
+    details: {
+      style: 'Cream Botanical Toile',
+      customization: 'Available (Custom Monogram, Ribbon Tone)',
+      finishing: 'Textured Cardstock with Delicate Toile Print & Pearl Charm',
+      occasion: 'Nikah Favors, Walima Favors, Formal Sweet Box',
+    },
+    features: ['Soft Cream Botanical Toile', 'Pearl Charm Detail', 'Cream Satin Ribbon', 'Luxury Keepsake Box'],
+    altText: 'Cream Toile bespoke favor bid box by Dream Invites',
+  },
+
+  // 3. Mint Toile Bid Box
   {
     id: 'mint-toile-bid-box',
     slug: 'mint-toile-bid-box',
     name: 'Mint Toile Bid Box',
     category: 'Bid Boxes',
     subCategory: 'Floral',
-    tagline: 'Classical Toile de Jouy botanical artwork on pastel mint with gold foil',
-    description: 'A delicate mint green ceremonial favor box adorned with classical Toile de Jouy botanical illustrations, finished with gold foil lettering and matching satin ribbon.',
+    tagline: 'Soft mint favor box with white toile illustrations and pearl charm',
+    description: 'Soft mint favor box with white botanical and bird illustrations in a classic toile pattern. It is tied with a cream ribbon and finished with a pearl charm.',
     images: [
-      '/products/bid-boxes/mint-toile-bid-box/MT-01.png',
+      '/bid-boxes/Mint Toile Bid Box 03/MT-01.png',
     ],
     details: {
-      style: 'Classical Toile de Jouy',
-      customization: 'Available (Custom Monogram, Inner Calligraphy Insert)',
-      finishing: 'Matte Art Cardstock with Gold Foil Stamping & Ribbon Tie',
-      occasion: 'Nikah Announcement, Bridal Shower, Luxury Sweet Favors',
+      style: 'Mint Toile de Jouy Pattern',
+      customization: 'Available (Custom Monogram, Inner Calligraphy)',
+      finishing: 'Fine Matte Mint Finish with White Toile Artwork & Charm',
+      occasion: 'Mehndi Favors, Nikah Announcement, Luxury Favors',
     },
-    features: ['Classical Toile Artwork', 'Gold Foil Lettering', 'Matching Mint Satin Ribbon', 'Luxury Rigid Presentation'],
+    features: ['Pastel Mint Toile Artwork', 'Cream Ribbon Tie', 'Pearl Charm Pull', 'Food-Safe Sweet Storage'],
     altText: 'Mint Toile ceremonial favor bid box by Dream Invites',
   },
 
-  // Rattan Bloom Bid Box (Collection Cover)
+  // 4. Blue Wreath Bid Box
+  {
+    id: 'blue-wreath-bid-box',
+    slug: 'blue-wreath-bid-box',
+    name: 'Blue Wreath Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Luxury',
+    tagline: 'Soft blue favor box with gold foil leafy wreath and matching ribbon bow',
+    description: 'Soft blue favor box with a gold foil leafy wreath and baby silhouette design. Elegant gold lettering appears in the center. The box is finished with a matching blue ribbon bow.',
+    images: [
+      '/bid-boxes/Blue Wreath Bid Box 04/BW-01.png',
+    ],
+    details: {
+      style: 'Gold Foil Leafy Wreath Emblem',
+      customization: 'Available (Center Lettering, Silhouette Option, Ribbon Colors)',
+      finishing: 'Hot Gold Foil Stamping with Soft Blue Ribbon Bow',
+      occasion: 'Celebration Favors, Sweet Boxes, Family Keepsakes',
+    },
+    features: ['Gold Foil Leafy Wreath', 'Center Gold Typography', 'Matching Blue Ribbon Bow', 'Premium Rigid Cardstock'],
+    altText: 'Blue Wreath elegant favor bid box by Dream Invites',
+  },
+
+  // 5. Burgundy Monogram Bid Box
+  {
+    id: 'burgundy-monogram-bid-box',
+    slug: 'burgundy-monogram-bid-box',
+    name: 'Burgundy Monogram Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Minimal',
+    tagline: 'Clean white favor box with burgundy monogram and satin ribbon bow',
+    description: 'White favor boxes feature a simple burgundy monogram on the lid. Each box is tied with a matching burgundy satin ribbon bow. The design remains clean and minimal.',
+    images: [
+      '/bid-boxes/Burgundy Monogram Bid Box 05/BM-01.png',
+    ],
+    details: {
+      style: 'Minimalist Monogram Contrast',
+      customization: 'Available (Bespoke Monogram, Ribbon Tone)',
+      finishing: 'Crisp White Cardstock with Rich Burgundy Monogram & Satin Bow',
+      occasion: 'Baraat Mithai, Nikah Favors, Formal Wedding Receptions',
+    },
+    features: ['Minimalist Center Monogram', 'Rich Burgundy Satin Ribbon', 'Crisp White Presentation Box', 'Clean Refined Lines'],
+    altText: 'Burgundy Monogram minimal favor bid box by Dream Invites',
+  },
+
+  // 6. Rattan Bloom Bid Box (Collection Cover)
   {
     id: 'rattan-bloom-bid-box',
     slug: 'rattan-bloom-bid-box',
     name: 'Rattan Bloom Bid Box',
     category: 'Bid Boxes',
     subCategory: 'Traditional',
-    tagline: 'Artisanal woven rattan texture with warm gold filigree and floral accents',
-    description: 'An artisanal favor bid box featuring fine woven rattan texture framed in gold detailing, topped with delicate floral accents and elegant calligraphy for luxury wedding favors.',
+    tagline: 'Cream round favor box with floral lid, delicate rattan band, and cream bow',
+    description: 'Cream round favor boxes with a soft green floral pattern on the lids. A delicate rattan band wraps the sides, and each box is finished with a cream ribbon bow.',
     images: [
-      '/products/bid-boxes/rattan-bloom-bid-box/RB-01.png',
+      '/bid-boxes/Rattan Bloom Bid Box 06/RB-01.png',
     ],
     details: {
-      style: 'Artisanal Rattan & Floral',
-      customization: 'Available (Personalized Monogram, Sweet Compartments)',
-      finishing: 'Fine Textured Rattan Pattern with Warm Metallic Gold Accents',
+      style: 'Artisanal Woven Rattan & Floral',
+      customization: 'Available (Floral Pattern, Ribbon Selection, Custom Medallion)',
+      finishing: 'Woven Rattan Band with Printed Floral Lid & Ribbon Bow',
       occasion: 'Mehndi Sweets, Baraat Mithai, Wedding Favors',
     },
-    features: ['Woven Rattan Visual Texture', 'Metallic Gold Filigree Rim', 'Bespoke Center Medallion', 'Rigid Keepsake Quality'],
+    features: ['Delicate Woven Rattan Side Band', 'Soft Green Floral Lid Artwork', 'Cream Ribbon Bow Closure', 'Signature Round Silhouette'],
     altText: 'Rattan Bloom bespoke ceremonial favor bid box by Dream Invites',
   },
 
-  // Wax Bloom Bid Box (Multi-photo gallery)
+  // 7. Blue Bloom Bid Box
+  {
+    id: 'blue-bloom-bid-box',
+    slug: 'blue-bloom-bid-box',
+    name: 'Blue Bloom Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Floral',
+    tagline: 'Cream favor box with blue floral line illustrations and soft blue ribbon',
+    description: 'Cream favor box with blue floral line illustrations and gold lettering. It is tied with a soft blue ribbon bow. The design is clean and refined.',
+    images: [
+      '/bid-boxes/Blue Bloom Bid Box 7/BL-01.png',
+    ],
+    details: {
+      style: 'Fine Botanical Line Artwork',
+      customization: 'Available (Gold Lettering, Ribbon Tone)',
+      finishing: 'Precision Line Illustration with Gold Lettering & Blue Ribbon',
+      occasion: 'Walima Favors, Daytime Nikah, Wedding Favors',
+    },
+    features: ['Delicate Blue Floral Line Illustrations', 'Warm Gold Script Lettering', 'Soft Blue Satin Ribbon', 'Clean Refined Aesthetic'],
+    altText: 'Blue Bloom botanical favor bid box by Dream Invites',
+  },
+
+  // 8. Mint Monogram Bid Box
+  {
+    id: 'mint-monogram-bid-box',
+    slug: 'mint-monogram-bid-box',
+    name: 'Mint Monogram Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Keepsake',
+    tagline: 'Soft mint round favor box with gold monogram and key design on lid',
+    description: 'Soft mint round favor box with an elegant gold monogram and key design on the lid. The clean exterior pairs with a divided interior for small gifts.',
+    images: [
+      '/bid-boxes/Mint Monogram Bid Box 08/MM-01.png',
+    ],
+    details: {
+      style: 'Round Keepsake Box with Key Medallion',
+      customization: 'Available (Couple Monogram, Divided Interior Layout)',
+      finishing: 'Soft Mint Matte Finish with Gold Monogram & Key Detailing',
+      occasion: 'Nikah Announcement, VIP Gifts, Luxury Mithai Presentation',
+    },
+    features: ['Round Box Silhouette', 'Gold Foil Monogram with Key Motif', 'Divided Multi-Compartment Interior', 'Velvety Matte Mint Texture'],
+    altText: 'Mint Monogram round favor bid box by Dream Invites',
+  },
+
+  // 9. Wax Bloom Bid Box (Multi-photo gallery: WB-01.png & WB-02.png)
   {
     id: 'wax-bloom-bid-box',
     slug: 'wax-bloom-bid-box',
     name: 'Wax Bloom Bid Box',
     category: 'Bid Boxes',
     subCategory: 'Keepsake',
-    tagline: 'Hand-poured botanical wax seal medallion with warm gold calligraphy',
-    description: 'An elegant ceremonial favor box featuring a hand-poured botanical wax seal medallion, gold calligraphy detailing, and satin ribbon closure.',
+    tagline: 'Soft champagne favor box with embossed monogram and gold floral wax seal',
+    description: 'Soft champagne favor boxes with an embossed monogram and a gold floral wax seal. Each box is finished with a cream ribbon bow. The design is clean and refined.',
     images: [
-      '/products/bid-boxes/wax-bloom-bid-box/WB-01.png',
-      '/products/bid-boxes/wax-bloom-bid-box/WB-02.png',
+      '/bid-boxes/Wax Bloom Bid Box 09/WB-01.png',
+      '/bid-boxes/Wax Bloom Bid Box 09/WB-02.png',
     ],
     details: {
-      style: 'Artisanal Wax Seal Keepsake',
-      customization: 'Available (Custom Wax Seal Monogram, Ribbon Tone)',
-      finishing: 'Hand-Poured Wax Medallion with Satin Ribbon Closure',
-      occasion: 'Nikah Announcement, Formal Sweet Presentation',
+      style: 'Embossed Monogram & Wax Medallion',
+      customization: 'Available (Custom Wax Seal, Ribbon Selection, Embossed Initials)',
+      finishing: 'Blind Embossed Monogram with Hand-Pressed Gold Wax Seal',
+      occasion: 'Nikah Announcement, Luxury Sweet Favors, Keepsake Box',
     },
-    features: ['Hand-Poured Wax Medallion', 'Warm Gold Calligraphy', 'Satin Ribbon Closure', 'Double-Angle Product Gallery'],
-    altText: 'Wax Bloom ceremonial favor bid box by Dream Invites',
+    features: ['Hand-Pressed Gold Floral Wax Seal', 'Blind Embossed Monogram', 'Cream Ribbon Bow Closure', 'Multi-Angle 2-Photo Gallery'],
+    altText: 'Wax Bloom champagne favor bid box with gold wax seal by Dream Invites',
   },
 
-  // Navy Velvet Bid Box
+  // 10. Navy Velvet Bid Box
   {
     id: 'navy-velvet-bid-box',
     slug: 'navy-velvet-bid-box',
     name: 'Navy Velvet Bid Box',
     category: 'Bid Boxes',
     subCategory: 'Velvet',
-    tagline: 'Deep navy velvet casing with regal gold foil lettering',
-    description: 'A regal ceremonial bid box wrapped in deep navy velvet with gold foil script detailing and luxury ribbon closure for sweet wedding favors.',
+    tagline: 'Deep navy velvet box with elegant gold monogram lettering on lid',
+    description: 'Deep navy velvet ring boxes with elegant gold monogram lettering on the lids. The soft texture and clean design create a refined look.',
     images: [
-      '/products/bid-boxes/navy-velvet-bid-box/NV-01.png',
+      '/bid-boxes/Navy Velvet Bid Box 10/NV-01.png',
     ],
     details: {
       style: 'Royal Velvet Keepsake',
-      customization: 'Available (Couple Monogram, Interior Compartments)',
-      finishing: 'Premium Navy Velvet Wrap with Gold Foil Detailing',
-      occasion: 'VIP Family Favors, Baraat Mithai, Nikah Announcement',
+      customization: 'Available (Gold Monogram Initials, Interior Lining)',
+      finishing: 'Lush Navy Velvet Wrap with Metallic Gold Foil Stamping',
+      occasion: 'Ring Presentation, Nikah Announcement, VIP Favors',
     },
-    features: ['Deep Navy Velvet Texture', 'Gold Foil Calligraphy', 'Luxury Satin Ribbon', 'Rigid Core Keepsake Box'],
-    altText: 'Navy Velvet ceremonial favor bid box by Dream Invites',
+    features: ['Lush Navy Velvet Exterior', 'Metallic Gold Monogram Lettering', 'Soft Tactile Texture', 'Rigid Heirloom Core'],
+    altText: 'Navy Velvet bespoke favor bid box by Dream Invites',
   },
 
-  // Navy Floral Bid Box
+  // 11. Emerald Crest Bid Box
+  {
+    id: 'emerald-crest-bid-box',
+    slug: 'emerald-crest-bid-box',
+    name: 'Emerald Crest Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Luxury',
+    tagline: 'Deep green favor box with gold foil crest, cream ribbon, and gold wax seal',
+    description: 'Deep green favor box with a gold foil monogram crest and elegant script lettering. It is wrapped with a cream ribbon and topped with a gold wax seal.',
+    images: [
+      '/bid-boxes/Emerald Crest Bid Box 11/EC-01.png',
+    ],
+    details: {
+      style: 'Royal Emerald Crest',
+      customization: 'Available (Custom Family Crest, Ribbon Tone, Wax Seal)',
+      finishing: 'Deep Emerald Matte Board with Gold Foil Crest & Wax Seal',
+      occasion: 'Royal Nikah, Baraat Mithai, Formal Announcement',
+    },
+    features: ['Gold Foil Monogram Crest', 'Hand-Pressed Gold Wax Seal', 'Cream Ribbon Wrap', 'Rich Emerald Green Hue'],
+    altText: 'Emerald Crest luxury favor bid box by Dream Invites',
+  },
+
+  // 12. Green Bloom Bid Box
+  {
+    id: 'green-bloom-bid-box',
+    slug: 'green-bloom-bid-box',
+    name: 'Green Bloom Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Floral',
+    tagline: 'Cream favor box with green botanical artwork, olive velvet ribbon, and pearl charm',
+    description: 'Cream favor boxes with green botanical line illustrations and gold lettering. Each box is tied with an olive green velvet ribbon and finished with a pearl charm.',
+    images: [
+      '/bid-boxes/Green Bloom Bid Box 12/GB-01.png',
+    ],
+    details: {
+      style: 'Botanical Line Art & Olive Velvet',
+      customization: 'Available (Gold Lettering, Velvet Ribbon Color)',
+      finishing: 'Botanical Print on Cream Cardstock with Velvet Ribbon & Charm',
+      occasion: 'Mehndi Favors, Daytime Weddings, Garden Receptions',
+    },
+    features: ['Green Botanical Line Art', 'Olive Green Velvet Ribbon Tie', 'Delicate Pearl Charm', 'Gold Calligraphy Accent'],
+    altText: 'Green Bloom botanical favor bid box by Dream Invites',
+  },
+
+  // 13. Blush Tassel Bid Box
+  {
+    id: 'blush-tassel-bid-box',
+    slug: 'blush-tassel-bid-box',
+    name: 'Blush Tassel Bid Box',
+    category: 'Bid Boxes',
+    subCategory: 'Traditional',
+    tagline: 'Soft blush favor box with floral pattern, gold calligraphy, and matching tassel',
+    description: 'Soft blush favor boxes with a subtle floral pattern and elegant gold calligraphy. Each box is finished with a matching blush tassel.',
+    images: [
+      '/bid-boxes/Blush Tassel Bid Box 13/BT-01.png',
+    ],
+    details: {
+      style: 'Soft Blush & Gold Calligraphy',
+      customization: 'Available (Couple Calligraphy, Tassel Color)',
+      finishing: 'Subtle Floral Pattern with Gold Foil Calligraphy & Silk Tassel',
+      occasion: 'Bridal Shower, Dholki Sweets, Nikah Favors',
+    },
+    features: ['Subtle Blush Floral Pattern', 'Warm Gold Calligraphy', 'Matching Silk Tassel Pull', 'Heirloom Keepsake Quality'],
+    altText: 'Blush Tassel favor bid box with gold calligraphy by Dream Invites',
+  },
+
+  // 14. Navy Floral Bid Box
   {
     id: 'navy-floral-bid-box',
     slug: 'navy-floral-bid-box',
     name: 'Navy Floral Bid Box',
     category: 'Bid Boxes',
     subCategory: 'Floral',
-    tagline: 'Deep navy square favor box with white botanical florals and ribbon bow',
+    tagline: 'Deep navy square favor box with white botanical florals and textured ribbon bow',
     description: 'This square favor box features a deep navy blue background covered in white floral illustrations. A round white emblem on the front showcases elegant script lettering. The top is neatly tied with a soft white textured ribbon bow.',
     images: [
-      '/products/bid-boxes/navy-floral-bid-box/NF-01.png',
+      '/bid-boxes/Navy Floral Bid Box 14/NF-01.png',
     ],
     details: {
       style: 'Botanical Floral Illustration',
@@ -651,7 +849,7 @@ export const PRODUCTS: Product[] = [
       finishing: 'Deep Matte Navy with White Botanical Print & Textured Ribbon',
       occasion: 'Walima Favors, Wedding Favors, Sweet Boxes',
     },
-    features: ['White Botanical Floral Pattern', 'Contrasting Center Script Emblem', 'Soft Textured Ribbon Bow', 'Food-Safe Sweet Storage'],
+    features: ['White Botanical Floral Pattern', 'Center Round Script Emblem', 'Soft Textured Ribbon Bow', 'Food-Safe Sweet Storage'],
     altText: 'Navy Floral bespoke wedding favor bid box by Dream Invites',
   },
 
