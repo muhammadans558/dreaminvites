@@ -81,7 +81,7 @@ export const CategoryShowcase: React.FC = () => {
                   <span>Explore Wedding Cards</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">17 Designs</span>
+                <span className="text-xs text-stone-500 dark:text-stone-400 font-sans font-medium">20 Designs</span>
               </div>
             </div>
           </div>

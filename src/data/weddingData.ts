@@ -98,7 +98,7 @@ export const COLLECTIONS: CollectionInfo[] = [
     coverImage: '/products/wedding-cards/embossed-bloom-02/EB-01.png',
     altText: 'Embossed Bloom wedding invitation suite and stationery collection by Dream Invites',
     ctaText: 'EXPLORE WEDDING CARDS',
-    productCountDescription: '17 Bespoke Suites',
+    productCountDescription: '20 Bespoke Suites',
   },
   {
     id: 'bid-boxes',
@@ -541,6 +541,78 @@ export const PRODUCTS: Product[] = [
     },
     features: ['Gold Script Typography', 'Hand-Tied Oversized Ribbon Bow', 'Subtle Watermark Monogram', 'Refined Minimal Border'],
     altText: 'Ribbon Grace elegant wedding invitation suite by Dream Invites',
+  },
+
+  // 18. Blush Arch
+  {
+    id: 'blush-arch',
+    slug: 'blush-arch',
+    name: 'Blush Arch',
+    category: 'Wedding Cards',
+    subCategory: 'Floral',
+    tagline: 'White arched invitation card with pink and peach watercolor flowers and rose wax seal',
+    description: 'White arched invitation card with soft pink and peach watercolor flowers along the top and bottom edges. Clean modern lettering highlights the names. The matching envelope features a small floral detail and a rose-toned wax seal.',
+    images: [
+      '/products/wedding-cards/blush-arch/BA-01.png',
+    ],
+    details: {
+      style: 'Watercolor Floral Arch',
+      customization: 'Available (Couple Names, Floral Accent Shades, Wax Seal Tone)',
+      finishing: 'Precision Die-Cut Arch with Hand-Pressed Rose Wax Seal',
+      paper: '350 GSM Heavy Matte Cotton Cardstock with Matching Envelope',
+      occasion: 'Nikah, Garden Weddings, Daytime Receptions',
+    },
+    features: ['Arched Silhouette Die-Cut', 'Soft Pink & Peach Watercolor Florals', 'Rose-Toned Wax Seal Flap', 'Modern Clean Typography'],
+    altText: 'Blush Arch watercolor floral wedding invitation card by Dream Invites',
+  },
+
+  // 19. Floral Arch
+  {
+    id: 'floral-arch',
+    slug: 'floral-arch',
+    name: 'Floral Arch',
+    category: 'Wedding Cards',
+    subCategory: 'Luxury',
+    tagline: 'Cream arched invitation card with embossed floral border and pearl button closure',
+    description: 'Cream arched invitation card with an embossed floral border along the top curve and elegant script lettering. The matching envelope features a monogram cutout framed by embossed florals and closes with a pearl button.',
+    images: [
+      '/products/wedding-cards/floral-arch/FA-01.png',
+    ],
+    details: {
+      style: 'Embossed Floral Arch & Pearl Button',
+      customization: 'Available (Monogram Cutout, Couple Names, Envelope Finishing)',
+      finishing: 'Blind Embossed Floral Border with Monogram Cutout & Pearl Button Closure',
+      paper: '350 GSM Textured Cream Linen Cardstock',
+      occasion: 'Formal Nikah, Baraat & Royal Receptions',
+    },
+    features: ['Curved Arch Embossed Floral Border', 'Monogram Envelope Cutout', 'Artisanal Pearl Button Closure', 'Elegant Script Lettering'],
+    altText: 'Floral Arch embossed wedding invitation card with pearl button by Dream Invites',
+  },
+
+  // 20. Ivory Emboss
+  {
+    id: 'ivory-emboss',
+    slug: 'ivory-emboss',
+    name: 'Ivory Emboss',
+    category: 'Wedding Cards',
+    subCategory: 'Minimal',
+    tagline: 'Soft ivory invitation card with intricate embossed floral border and gold floral liner',
+    description: 'Soft ivory invitation card with intricate embossed floral details along the top edge. Elegant gold and dark lettering sits below the design. The matching envelope shows a delicate gold floral pattern on the inner liner.',
+    images: [
+      '/products/wedding-cards/ivory-emboss/IE-01.png',
+      '/products/wedding-cards/ivory-emboss/IE-02.jpg',
+      '/products/wedding-cards/ivory-emboss/IE-03.jpg',
+      '/products/wedding-cards/ivory-emboss/IE-04.jpg',
+    ],
+    details: {
+      style: 'Embossed Floral Heritage & Gold Patterned Liner',
+      customization: 'Available (Gold Lettering, Envelope Liner Pattern, Couple Monogram)',
+      finishing: 'Deep Embossed Floral Border with Patterned Gold Inner Liner',
+      paper: '350 GSM Textured Archival Ivory Cardstock',
+      occasion: 'Classic Nikah, Walima & Formal Celebrations',
+    },
+    features: ['Intricate Embossed Floral Top Border', 'Patterned Gold Inner Envelope Liner', 'Dual Gold & Dark Script Typography', 'Complete 4-Photo Multi-Angle Gallery'],
+    altText: 'Ivory Emboss luxury embossed wedding invitation suite by Dream Invites',
   },
 
   // --- BID BOXES (14 Real Dream Invites Favor Boxes in Exact Specified Order) ---
