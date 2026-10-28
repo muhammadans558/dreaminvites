@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { COLLECTIONS, CollectionInfo } from '../data/weddingData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { OptimizedImage } from './OptimizedImage';
 
 interface CollectionsOverviewSectionProps {
   onSelectCollection: (slug: string) => void;
@@ -89,11 +90,11 @@ const CollectionBlock: React.FC<CollectionBlockProps> = ({
           }`}
         >
           <div className="relative aspect-4/3 sm:aspect-16/10 overflow-hidden">
-            <img
+            <OptimizedImage
               src={collection.coverImage}
               alt={collection.altText}
-              referrerPolicy="no-referrer"
-              loading="lazy"
+              isThumbnail={false}
+              priority={index === 0}
               className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
             />
             {/* Subtle category identifier on top */}

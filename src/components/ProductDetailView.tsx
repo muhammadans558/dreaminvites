@@ -3,6 +3,7 @@ import { X, ChevronLeft, ChevronRight, Check, ArrowRight, ZoomIn } from 'lucide-
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product, BRAND_CONFIG, getRelatedProducts } from '../data/weddingData';
 import { ImageLightbox } from './ImageLightbox';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ProductDetailViewProps {
   product: Product;
@@ -162,26 +163,23 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
               }}
               aria-label={`Click to zoom image ${activeImageIndex + 1} for ${product.name}`}
             >
-              {!imageError ? (
-                <img
-                  src={product.images[activeImageIndex] || product.images[0]}
-                  alt={`${product.name} View ${activeImageIndex + 1} of ${product.images.length}`}
-                  referrerPolicy="no-referrer"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageError(true)}
-                  className={`w-full h-full object-cover sm:object-contain transition-opacity duration-300 ${
-                    imageLoaded ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-stone-100 dark:bg-stone-900 text-stone-500 text-center">
-                  <span className="font-serif text-2xl text-stone-800 dark:text-stone-200">{product.name}</span>
-                  <span className="text-xs uppercase tracking-wider text-stone-400 mt-1">Dream Invites</span>
-                </div>
-              )}
+              <OptimizedImage
+                src={product.images[activeImageIndex] || product.images[0]}
+                alt={`${product.name} View ${activeImageIndex + 1} of ${product.images.length}`}
+                isThumbnail={false}
+                priority={true}
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageError(true)}
+                className={`w-full h-full object-cover sm:object-contain transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                fallbackComponent={
+                  <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-stone-100 dark:bg-stone-900 text-stone-500 text-center">
+                    <span className="font-serif text-2xl text-stone-800 dark:text-stone-200">{product.name}</span>
+                    <span className="text-xs uppercase tracking-wider text-stone-400 mt-1">Dream Invites</span>
+                  </div>
+                }
+              />
 
               {/* Prev / Next Arrows (if > 1 image) */}
               {product.images.length > 1 && (
@@ -260,10 +258,11 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                           : 'border-stone-200 dark:border-stone-700 opacity-65 hover:opacity-100 hover:border-stone-400'
                       }`}
                     >
-                      <img
+                      <OptimizedImage
                         src={imgUrl}
                         alt={`Thumbnail ${index + 1}`}
-                        referrerPolicy="no-referrer"
+                        isThumbnail={true}
+                        priority={true}
                         className="w-full h-full object-cover"
                       />
                     </button>
@@ -425,10 +424,11 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                   className="group cursor-pointer bg-white dark:bg-[#181716] border border-stone-200/80 dark:border-stone-800/80 rounded-xs overflow-hidden transition-all duration-200 hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-md flex flex-col"
                 >
                   <div className="aspect-4/3 overflow-hidden bg-stone-100 dark:bg-stone-900 relative">
-                    <img
+                    <OptimizedImage
                       src={rel.images[0]}
                       alt={rel.name}
-                      referrerPolicy="no-referrer"
+                      isThumbnail={true}
+                      priority={false}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                     />
                     <div className="absolute top-2 left-2 bg-[#FAF8F5]/90 dark:bg-[#121110]/90 backdrop-blur-xs px-2 py-0.5 text-[10px] tracking-widest uppercase font-medium text-stone-700 dark:text-stone-300">

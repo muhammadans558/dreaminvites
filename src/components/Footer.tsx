@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Instagram, ArrowUp } from 'lucide-react';
+import { Mail, Instagram, ArrowUp, Download } from 'lucide-react';
 import { DreamInvitesLogo } from './DreamInvitesLogo';
 import { BRAND_CONFIG } from '../data/weddingData';
 
@@ -124,8 +124,18 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCollection }) => {
 
         {/* Bottom Bar: Copyright & Back to Top (Left Aligned Base) */}
         <div className="pt-8 border-t border-[rgba(0,0,0,0.06)] dark:border-stone-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#5F5A55] dark:text-[#A8A29E] font-sans text-left">
-          <div className="text-left">
-            &copy; 2026 Dream Invites. All rights reserved.
+          <div className="flex flex-wrap items-center gap-4 text-left">
+            <span>&copy; 2026 Dream Invites. All rights reserved.</span>
+            <span className="hidden sm:inline text-stone-300 dark:text-stone-700">|</span>
+            <a
+              href="/dreaminvites-update.zip"
+              download="dreaminvites-update.zip"
+              className="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-900/5 dark:bg-white/10 hover:bg-[#00AEEF] hover:text-white dark:hover:bg-[#00AEEF] text-stone-700 dark:text-stone-300 rounded text-xs font-medium transition-all"
+              title="Download deployment package with all 20 wedding cards and 14 bid boxes"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download Deployment ZIP (74 MB)</span>
+            </a>
           </div>
 
           <div className="flex items-center gap-4">

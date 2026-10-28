@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Eye, Images } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product, BRAND_CONFIG } from '../data/weddingData';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ProductCardProps {
   product: Product;
@@ -23,24 +24,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetails
         className="relative aspect-4/3 overflow-hidden bg-stone-100 dark:bg-stone-900 cursor-pointer"
         onClick={() => onOpenDetails(product)}
       >
-        {!imageError ? (
-          <img
-            src={mainImage}
-            alt={product.altText}
-            referrerPolicy="no-referrer"
-            loading="lazy"
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageError(true)}
-            className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-stone-100 dark:bg-stone-900 text-stone-500 text-center">
-            <span className="font-serif text-xl text-stone-800 dark:text-stone-200">{product.name}</span>
-            <span className="text-xs uppercase tracking-wider text-stone-400 mt-1">Dream Invites</span>
-          </div>
-        )}
+        <OptimizedImage
+          src={mainImage}
+          alt={product.altText}
+          isThumbnail={true}
+          priority={false}
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageError(true)}
+          className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          fallbackComponent={
+            <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-stone-100 dark:bg-stone-900 text-stone-500 text-center">
+              <span className="font-serif text-xl text-stone-800 dark:text-stone-200">{product.name}</span>
+              <span className="text-xs uppercase tracking-wider text-stone-400 mt-1">Dream Invites</span>
+            </div>
+          }
+        />
 
         {/* Quiet Category Marker */}
         <div className="absolute top-3 left-3 bg-[#FAF8F5]/90 dark:bg-[#121110]/90 backdrop-blur-xs px-2.5 py-1 text-[11px] tracking-widest uppercase font-medium text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-stone-800/60">

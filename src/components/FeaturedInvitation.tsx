@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { BRAND_CONFIG } from '../data/weddingData';
+import { OptimizedImage } from './OptimizedImage';
 
 export const FeaturedInvitation: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -13,11 +14,11 @@ export const FeaturedInvitation: React.FC = () => {
           {/* Left Column: Large Editorial Image with Scrim/Framing */}
           <div className="lg:col-span-7 relative">
             <div className="relative aspect-4/3 rounded-xs overflow-hidden bg-stone-200 dark:bg-stone-800 border border-stone-300/80 dark:border-stone-700/80 shadow-xl">
-              <img
+              <OptimizedImage
                 src="/assets/images/featured_invitation_editorial_1790662767611.jpg"
                 alt="Editorial luxury wedding card flat lay with bespoke monogram wax seal and gold foil lettering by Dream Invites"
-                referrerPolicy="no-referrer"
-                loading="lazy"
+                isThumbnail={false}
+                priority={false}
                 onLoad={() => setImageLoaded(true)}
                 className={`w-full h-full object-cover transition-opacity duration-700 hover:scale-[1.02] transition-transform ${
                   imageLoaded ? 'opacity-100' : 'opacity-0'

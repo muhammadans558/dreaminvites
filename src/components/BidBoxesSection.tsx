@@ -3,6 +3,7 @@ import { Eye, PackageOpen } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product, PRODUCTS, BRAND_CONFIG } from '../data/weddingData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { OptimizedImage } from './OptimizedImage';
 
 interface BidBoxesSectionProps {
   onSelectProduct: (product: Product) => void;
@@ -65,11 +66,11 @@ export const BidBoxesSection: React.FC<BidBoxesSectionProps> = ({ onSelectProduc
                   className="relative aspect-4/3 overflow-hidden bg-stone-900 cursor-pointer"
                   onClick={() => onSelectProduct(box)}
                 >
-                  <img
+                  <OptimizedImage
                     src={box.images[0]}
                     alt={box.altText}
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
+                    isThumbnail={true}
+                    priority={false}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-102"
                   />
 

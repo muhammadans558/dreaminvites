@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { OptimizedImage } from './OptimizedImage';
 
 export const CategoryShowcase: React.FC = () => {
   const { ref, isVisible } = useScrollReveal<HTMLElement>(0.12);
@@ -54,11 +55,11 @@ export const CategoryShowcase: React.FC = () => {
             className="lg:col-span-6 group cursor-pointer bg-white dark:bg-[#181716] border border-stone-200/90 dark:border-stone-800/90 rounded-xs overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             <div className="relative aspect-4/3 sm:aspect-16/11 overflow-hidden bg-stone-100 dark:bg-stone-900">
-              <img
+              <OptimizedImage
                 src="/assets/images/featured_invitation_editorial_1790662767611.jpg"
                 alt="Wedding cards collection by Dream Invites"
-                referrerPolicy="no-referrer"
-                loading="lazy"
+                isThumbnail={false}
+                priority={false}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-102"
               />
               <div className="absolute top-4 left-4 bg-[#FAF8F5]/95 dark:bg-[#121110]/95 backdrop-blur-xs px-3 py-1.5 text-xs font-sans tracking-widest uppercase font-semibold text-stone-900 dark:text-stone-100 border border-stone-200/70 dark:border-stone-700/70">
@@ -92,11 +93,11 @@ export const CategoryShowcase: React.FC = () => {
             className="lg:col-span-6 group cursor-pointer bg-white dark:bg-[#181716] border border-stone-200/90 dark:border-stone-800/90 rounded-xs overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             <div className="relative aspect-4/3 sm:aspect-16/11 overflow-hidden bg-stone-100 dark:bg-stone-900">
-              <img
+              <OptimizedImage
                 src="/bid-boxes/Rattan Bloom Bid Box 06/RB-01.png"
                 alt="Rattan Bloom ceremonial favor bid box by Dream Invites"
-                referrerPolicy="no-referrer"
-                loading="lazy"
+                isThumbnail={false}
+                priority={false}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-102"
               />
               <div className="absolute top-4 left-4 bg-[#FAF8F5]/95 dark:bg-[#121110]/95 backdrop-blur-xs px-3 py-1.5 text-xs font-sans tracking-widest uppercase font-semibold text-stone-900 dark:text-stone-100 border border-stone-200/70 dark:border-stone-700/70">

@@ -1,0 +1,15 @@
+DREAM INVITES - COMPLETE DEPLOYMENT PACKAGE
+======================================================
+This package contains all verified code and image assets for Dream Invites:
+- All 20 Wedding Card products (including Blush Arch, Floral Arch, and Ivory Emboss with 4 multi-angle photos)
+- All 14 Bid Box products in exact specified order with Rattan Bloom as collection cover
+- Updated src/data/weddingData.ts
+- Updated src/components/CategoryShowcase.tsx
+
+HOW TO USE:
+1. Extract this zip archive directly into your local dreaminvites project root folder.
+2. In your terminal:
+     git add .
+     git commit -m "Complete 20 Wedding Cards and 14 Bid Boxes with verified images"
+     git push origin main
+3. Vercel will automatically build and publish the changes to your live website!

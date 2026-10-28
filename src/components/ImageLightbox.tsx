@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Product } from '../data/weddingData';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ImageLightboxProps {
   product: Product | null;
@@ -151,11 +152,12 @@ export const ImageLightbox: React.FC<ImageLightboxProps> = ({
           className="relative max-w-full max-h-full flex items-center justify-center"
           onClick={(e) => e.stopPropagation()}
         >
-          <img
+          <OptimizedImage
             key={currentImage}
             src={currentImage}
             alt={`${product.name} photo ${currentIndex + 1} of ${totalImages}`}
-            referrerPolicy="no-referrer"
+            isThumbnail={false}
+            priority={true}
             className="max-h-[82vh] sm:max-h-[86vh] max-w-[92vw] sm:max-w-[85vw] w-auto h-auto object-contain rounded-xs shadow-2xl transition-transform duration-300"
           />
         </div>
@@ -209,10 +211,11 @@ export const ImageLightbox: React.FC<ImageLightboxProps> = ({
                     : 'border-transparent opacity-50 hover:opacity-90'
                 }`}
               >
-                <img
+                <OptimizedImage
                   src={img}
                   alt={`Thumbnail ${idx + 1}`}
-                  referrerPolicy="no-referrer"
+                  isThumbnail={true}
+                  priority={true}
                   className="w-full h-full object-cover"
                 />
               </button>
